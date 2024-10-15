@@ -3,26 +3,37 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
-  let employees = [];
-  let numEmployees = parseInt (prompt("Enter the number of employees:"));
+  const employeesArray = [];
+  let addAnotherEmployee = true;
 
-  for (let i = 0; i <numEmployees; i++) {
-    let employee = {};
-    employee.name = prompt("Enter employee name:");
-    employee.age = parseInt(prompt("Enter employee age:"));
-    employee.position = prompt("Enter employee position:");
+  while (addAnotherEmployee) {
+    const firstName = prompt("Enter employees first name:")
+    const lastName = prompt("Enter employees last name:")
+    let salary = prompt ("Enter employees salary:")
 
-    employees.push(employee);
+    salary = isNaN(Number(salary)) ? 0 : Number(salary);
+
+    const employees = {
+      firstName: firstName,
+      lastName: lastName,
+      salary: salary,
+    };
+    employeesArray.push(employees);
+  
+    const continueAdding = confirm("Do you want to add another employee?")
+    if (!continueAdding){
+      addAnotherEmployee = false;
+    }
   }
-  return employees;
+  return employeesArray;
 }
-let employees = collectEmployees();
-console.log(employees);
   // TODO: Get user input to create and return an array of employee objects
 
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
+
+}
+function displayAverageSalary(salaries) {
   if (salaries.length === 0) {
     return 0;
   }
@@ -35,7 +46,7 @@ const displayAverageSalary = function(employeesArray) {
 }
 
 const salaryArray = [50000, 60000, 75000, 80000];
-const averageSalary = calculateAverageSalary(salaryArray);
+const averageSalary = displayAverageSalary(salaryArray);
 
 console.log("Average Salary:", averageSalary);
 
@@ -121,4 +132,5 @@ const trackEmployeeData = function() {
 }
 
 // Add event listener to 'Add Employees' button
-addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
+addEmployeesBtn.addEventListener('click', trackEmployeeData());

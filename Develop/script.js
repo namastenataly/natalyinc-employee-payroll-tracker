@@ -37,39 +37,20 @@ const displayAverageSalary = function(employeesArray) {
 
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: ${(totalSalary / employeesArray.length).toLocaleString(undefined, {maximumFractionDigits: 2})}`);
 }
-function displayAverageSalary(salaries) {
-  if (salaries.length === 0) {
-    return 0;
-  }
-  let totalSalary = 0;
-  for (let salary of salaries) {
-    totalSalary += salary;
-  }
-  return totalSalary / salaries.length;
+
   // TODO: Calculate and display the average salary
-}
 
-const salaryArray = [50000, 60000, 75000, 80000];
-const averageSalary = displayAverageSalary(salaryArray);
-
-console.log("Average Salary:", averageSalary);
 
 // Select a random employee
-const getRandomEmployee = function(employeesArray) {
-  const employees = [
-    { name: "John Doe", posistion: "Manager" },
-    { name: "Jane Smith", position: "Developer" },
-    { name: "Alice Lee", position: "Designer" },
-  ];
-
-  function selectRandomEmployee() {
-    const randomIndex = Math.floor(Math.random() * employees.length);
-    const randomEmployee = employees[randomIndex];
-
-    console.log("Name:", randomEmployee.name);
-    console.log("Position:", random.Employee.position);
-  }
   // TODO: Select and display a random employee
+const getRandomEmployee = function(employeesArray) {
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  const randomEmployee = employeesArray[randomIndex];
+
+  console.log(`Congratulations to the ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+
+  employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+  return employeesArray;
 }
 
 /*

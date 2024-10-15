@@ -1,25 +1,33 @@
 // Get a reference to the #add-employees-btn element
+// document.querySelector returns the first Element within the document that matches the specified CSS selector.
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
+// This function collects the employee information 
 const collectEmployees = function() {
   const employeesArray = [];
   let addAnotherEmployee = true;
-
+ 
+  //google taught me that "prompt" allows the pop up to appear
+  // The challenge called for this function to display a first name, last name and salary. My original trial was with name, age and job position. 
   while (addAnotherEmployee) {
     const firstName = prompt("Enter employees first name:")
     const lastName = prompt("Enter employees last name:")
     let salary = prompt ("Enter employees salary:")
 
+    // thank you webMDN for the lesson on isNaN
     salary = isNaN(Number(salary)) ? 0 : Number(salary);
 
-    const employees = {
+    // This allows the input message to pop up
+     // TODO: Get user input to create and return an array of employee objects
+    const employee = {
       firstName: firstName,
       lastName: lastName,
       salary: salary,
     };
-    employeesArray.push(employees);
+    employeesArray.push(employee);
   
+    // This function: ContinueAdding confirms whether or not the person wants to add another employee or cancel and see their results in the table
     const continueAdding = confirm("Do you want to add another employee?")
     if (!continueAdding){
       addAnotherEmployee = false;
@@ -27,31 +35,34 @@ const collectEmployees = function() {
   }
   return employeesArray;
 }
-  // TODO: Get user input to create and return an array of employee objects
-
 
 // Display the average salary
+// TODO: Calculate and display the average salary
+// => is an arrow function. Instead of using a traditional function expression, you can use an arrow function.
 const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, employee) => acc + employee.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
+  // this allows the salary to be displayed in the table
 
   console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: ${(totalSalary / employeesArray.length).toLocaleString(undefined, {maximumFractionDigits: 2})}`);
 }
-
-  // TODO: Calculate and display the average salary
-
+// MaximumFractionDigits returns the maximum number of digits allowed in the fraction portion of a number.
 
 // Select a random employee
   // TODO: Select and display a random employee
+  //math.random selects a random number within the array of employees and displays the congratulations message
 const getRandomEmployee = function(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
 
   console.log(`Congratulations to the ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
 
+  //This sorts the names of employees in aphabetical order using their last name
   employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
   return employeesArray;
 }
+//localecompare method returns a number which indicates whether a referene string belongs alphabetically before, or after, or is the same as the given string in sort order.
+
 
 /*
   ====================

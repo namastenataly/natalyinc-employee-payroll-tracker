@@ -7,3 +7,9 @@ The goal of this challenge was to modify starter code to create an application t
 Given an employee payroll tracker, when you click the "add employee" button, you are presented with a series of prompts asking for first name, last name, and salary. When you finish adding an employee, then you are prompted to continue or cancel. When you choose to continue, then you are prompted to add a new employee. When you choose to cancel, then the employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data.
 
 ## Screenshot
+
+<img src="screenshot 1.png">
+<img src="screenshot 2.png">
+<img src="screenshot 3.png">
+<img src="screenshot 4.png">
+

@@ -8,10 +8,10 @@ Given an employee payroll tracker, when you click the "add employee" button, you
 
 ## Screenshot
 
-<img src="screenshot 1.png">
-<img src="screenshot 2.png">
-<img src="screenshot 3.png">
-<img src="screenshot 4.png">
+<img src="assets/images/screenshot 1.png">
+<img src="assets/images/screenshot 2.png">
+<img src="assets/images/screenshot 3.png">
+<img src="assets/images/screenshot 4.png">
 
 ## Link to working application 
 

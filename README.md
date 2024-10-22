@@ -23,3 +23,4 @@ Given an employee payroll tracker, when you click the "add employee" button, you
 <a href= "https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array">Stack Overflow</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN">Web MDN</a>
 <a href="https://www.w3schools.com/js/js_arrow_function.asp">W3 Schools</a>
+<a href="https://www.w3schools.com/jsref/jsref_localecompare.asp">W3 Schools</a>

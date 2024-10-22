@@ -44,9 +44,8 @@ const displayAverageSalary = function(employeesArray) {
   const averageSalary = totalSalary / employeesArray.length;
   // this allows the salary to be displayed in the table
 
-  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: ${(totalSalary / employeesArray.length).toLocaleString(undefined, {maximumFractionDigits: 2})}`);
+  console.log(`The average employee salary between our ${employeesArray.length} employee(s) is: ${(totalSalary / employeesArray.length)}`);
 }
-// MaximumFractionDigits returns the maximum number of digits allowed in the fraction portion of a number.
 
 // Select a random employee
   // TODO: Select and display a random employee
@@ -129,4 +128,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 
-addEmployeesBtn.addEventListener('click', trackEmployeeData());
+addEmployeesBtn.addEventListener('click', trackEmployeeData);
